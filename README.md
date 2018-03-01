@@ -1,4 +1,4 @@
-#### This is a solo project, by Kevin Murphy. The goal is to design a bookmark application that follows these guidelines:
+#### This is a solo project, by Kevin Murphy.
 ---
 # Fundamentals Final Project
 ## Build a Bookmarks App
