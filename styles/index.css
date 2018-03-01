@@ -98,8 +98,39 @@ body {
   display: block;
 }
 
-.add-bookmark-button-box, .default-rating-box {
+.new-bookmark-button-box, .default-rating-box, .title-stars-url-box, .expand-button-box, .bookmark-title-box, .title-box, .stars-box {
   display: inline-block;
+}
+
+.title-stars-box, .bookmark-url-box {
+  display: block;
+}
+
+.stars-box {
+  float: right;
+}
+
+.title-box {
+  float: left;
+}
+
+.expand-button-box {
+  width: 250px;
+  float: right;
+}
+
+.add-title-url-description-box, .add-stars-button-box {
+  width: 75%;
+  display: block;
+}
+
+.add-bookmark-button-box, .stars-box {
+  width: 75%;
+  display: inline-block;
+}
+
+.add-bookmark-button-box {
+  float: right;
 }
 
 /* Radio element, when checked */

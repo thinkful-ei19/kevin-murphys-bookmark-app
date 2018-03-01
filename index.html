@@ -29,8 +29,8 @@
   <section class="default-page">
     <div class="default-top">
       <div class="content">
-        <div class="add-bookmark-button-box">
-          <button class="btn">Add Bookmark</button>
+        <div class="new-bookmark-button-box">
+          <button class="btn">New Bookmark</button>
         </div>
         <div class="default-rating-box">
           <label class="default-rating-label">Default rating:</label>
@@ -51,20 +51,32 @@
     </div>
     <div class="item">
       <div class="content">
-        <label class="bookmark-title">Google</label>
-        <div class="stars">
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
+        <div class="title-stars-url-box">
+          <div class="title-stars-box">
+            <div class="bookmark-title-box">
+              <label class="bookmark-title">Google</label>
+            </div>
+            <div class="stars-box">
+              <div class="stars">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+              </div>
+            </div>
+          </div>
+          <div class="bookmark-url-box">
+            <label class="bookmark-url">https://www.google.com/</label>
+          </div>
         </div>
-        <label class="bookmark-url">https://www.google.com/</div>
-      <div class="expand-description">
-        <label class="label">Expand description</label>
-        <i class="fa fa-angle-down" style="font-size:40px;"></i>
+        <div class="expand-button-box">
+          <label class="label">Expand Bookmark</label>
+          <a href="">
+            <i class="fa fa-angle-down" style="font-size:40px;"></i>
+          </a>
+        </div>
       </div>
-    </div>
     </div>
     </div>
     <section class="footer">By Kevin Murphy</div>
@@ -77,39 +89,59 @@
     <section class="add-bookmark-page">
       <div class="add-bookmark-top">
         <div class="content">
-          <form id="new-title">
-            <input type="text" name="firstname" value="Title...">
-            <br>
-            <input type="text" name="lastname" value="URL...">
-            <br>
-            <input type="text" name="lastname" value="Description....">
-            <br>
-            <input type="submit" value="Submit">
-          </form>
-          <div class="stars">
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
+          <div class="add-title-url-description-box">
+            <form id="new-title">
+              <input type="text" name="firstname" value="Title...">
+              <br>
+              <input type="text" name="lastname" value="URL...">
+              <br>
+              <input type="text" name="lastname" value="Description....">
+              <br>
+              <div class="add-stars-button-box">
+                <div class="add-stars-box">
+                  <div class="stars">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                  </div>
+                </div>
+                <div class="add-bookmark-button-box">
+                  <input type="submit" value="Add Bookmark">
+                </div>
+              </div>
+            </form>
           </div>
-          <button class="btn">Add New Bookmark</button>
         </div>
       </div>
       <div class="item">
         <div class="content">
-          <label class="bookmark-title">Google</label>
-          <div class="stars">
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
+          <div class="title-stars-url-box">
+            <div class="title-stars-box">
+              <div class="bookmark-title-box">
+                <label class="bookmark-title">Google</label>
+              </div>
+              <div class="stars-box">
+                <div class="stars">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                </div>
+              </div>
+            </div>
+            <div class="bookmark-url-box">
+              <label class="bookmark-url">https://www.google.com/</label>
+            </div>
           </div>
-          <label class="bookmark-url">https://www.google.com/</div>
-        <div class="expand-description">
-          <label class="label">Expand description</label>
-          <i class="fa fa-angle-down" style="font-size:40px;"></i>
+          <div class="expand-button-box">
+            <label class="label">Expand Bookmark</label>
+            <a href="">
+              <i class="fa fa-angle-down" style="font-size:40px;"></i>
+            </a>
+          </div>
         </div>
       </div>
       </div>
@@ -124,19 +156,23 @@
       <section class="add-bookmark-page">
         <div class="default-top">
           <div class="content">
-            <button class="btn">Add Bookmark</button>
-            <label class="default-rating-label">Default rating:</label>
-            <div class="default-rating">
-              <input type="radio" name="my-input" id="default-rating" checked>
-              <label for="one star">1 Star</label>
-              <input type="radio" name="my-input" id="default-rating">
-              <label for="two star">2 Star</label>
-              <input type="radio" name="my-input" id="default-rating">
-              <label for="three star">3 Star</label>
-              <input type="radio" name="my-input" id="default-rating">
-              <label for="four star">4 Star</label>
-              <input type="radio" name="my-input" id="default-rating">
-              <label for="five star">5 Star</label>
+            <div class="new-bookmark-button-box">
+              <button class="btn">New Bookmark</button>
+            </div>
+            <div class="default-rating-box">
+              <label class="default-rating-label">Default rating:</label>
+              <div class="default-rating-content">
+                <input type="radio" name="my-input" id="default-rating" checked>
+                <label for="one star">1 Star</label>
+                <input type="radio" name="my-input" id="default-rating">
+                <label for="two star">2 Star</label>
+                <input type="radio" name="my-input" id="default-rating">
+                <label for="three star">3 Star</label>
+                <input type="radio" name="my-input" id="default-rating">
+                <label for="four star">4 Star</label>
+                <input type="radio" name="my-input" id="default-rating">
+                <label for="five star">5 Star</label>
+              </div>
             </div>
           </div>
         </div>
@@ -144,8 +180,10 @@
           <div class="content">
             <label class="bookmark-title">Google</label>
             <div class="expand-description">
-              <label class="label">Retract description</label>
-              <i class="fa fa-angle-up" style="font-size:40px;"></i>
+              <label class="label">Retract Bookmark</label>
+              <a href="">
+                <i class="fa fa-angle-up" style="font-size:40px;"></i>
+              </a>
             </div>
             <div class="stars">
               <span class="fa fa-star checked"></span>
@@ -159,26 +197,39 @@
               <br>
               <input type="text" name="URL" value="https://www.google.com/">
               <br>
-              <input type="edit bookmark" value="Edit Bookmark">
-              <input type="delete bookmark" value="Delete Bookmark">
+              <input type="submit" name="edit bookmark" value="Edit Bookmark">
+              <input type="submit" name="delete bookmark" value="Delete Bookmark">
             </form>
           </div>
         </div>
         </div>
         <div class="item">
           <div class="content">
-            <label class="bookmark-title">Google</label>
-            <div class="stars">
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
+            <div class="title-stars-url-box">
+              <div class="title-stars-box">
+                <div class="bookmark-title-box">
+                  <label class="bookmark-title">Google</label>
+                </div>
+                <div class="stars-box">
+                  <div class="stars">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="bookmark-url-box">
+                <label class="bookmark-url">https://www.google.com/</label>
+              </div>
             </div>
-            <label class="bookmark-url">https://www.google.com/</div>
-          <div class="expand-description">
-            <label class="label">Expand description</label>
-            <i class="fa fa-angle-down" style="font-size:40px;"></i>
+            <div class="expand-button-box">
+              <label class="label">Expand Bookmark</label>
+              <a href="">
+                <i class="fa fa-angle-down" style="font-size:40px;"></i>
+              </a>
+            </div>
           </div>
         </div>
         </div>
