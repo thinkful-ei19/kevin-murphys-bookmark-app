@@ -6,6 +6,6 @@ $(document).ready(function() {
   bookmarks.render();
   api.getItems((items) => {
     items.forEach((item) => store.addItem(item));
-    bookmarks.redner();
+    bookmarks.render();
   });
 });
