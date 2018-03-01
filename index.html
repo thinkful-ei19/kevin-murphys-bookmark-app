@@ -1,12 +1,15 @@
 <!doctype html>
 
 <html lang="en">
-<head>
-  <meta charset="utf-8">
 
+<head>
+  <!-- Website Info -->
+  <meta charset="utf-8">
   <title>Bookmark Application</title>
   <meta name="Kevin Murphy" content="Bookmark Application for Thinkful">
-
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="styles/index.css">
 
   <!--[if lt IE 9]>
@@ -15,21 +18,182 @@
 </head>
 
 <body>
-  <div class="title">Bookmarks</div>
+  <header class="title">Bookmarks</header>
 
-  <div class="bookmarks"></div>
+  <section class="bookmarks"></section>
 
-  <div class="footer">By Kevin Murphy</div>
+  <!-- Default page -->
+
+  <header class="page-title">Default Page</header>
+
+  <section class="default-page">
+    <div class="default-top">
+      <div class="content">
+        <div class="add-bookmark-button-box">
+          <button class="btn">Add Bookmark</button>
+        </div>
+        <div class="default-rating-box">
+          <label class="default-rating-label">Default rating:</label>
+          <div class="default-rating-content">
+            <input type="radio" name="my-input" id="default-rating" checked>
+            <label for="one star">1 Star</label>
+            <input type="radio" name="my-input" id="default-rating">
+            <label for="two star">2 Star</label>
+            <input type="radio" name="my-input" id="default-rating">
+            <label for="three star">3 Star</label>
+            <input type="radio" name="my-input" id="default-rating">
+            <label for="four star">4 Star</label>
+            <input type="radio" name="my-input" id="default-rating">
+            <label for="five star">5 Star</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="content">
+        <label class="bookmark-title">Google</label>
+        <div class="stars">
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+        </div>
+        <label class="bookmark-url">https://www.google.com/</div>
+      <div class="expand-description">
+        <label class="label">Expand description</label>
+        <i class="fa fa-angle-down" style="font-size:40px;"></i>
+      </div>
+    </div>
+    </div>
+    </div>
+    <section class="footer">By Kevin Murphy</div>
+    </section>
+
+    <!-- Add Bookmark Page -->
+
+    <header class="page-title">Add Bookmark Page</header>
+
+    <section class="add-bookmark-page">
+      <div class="add-bookmark-top">
+        <div class="content">
+          <form id="new-title">
+            <input type="text" name="firstname" value="Title...">
+            <br>
+            <input type="text" name="lastname" value="URL...">
+            <br>
+            <input type="text" name="lastname" value="Description....">
+            <br>
+            <input type="submit" value="Submit">
+          </form>
+          <div class="stars">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+          </div>
+          <button class="btn">Add New Bookmark</button>
+        </div>
+      </div>
+      <div class="item">
+        <div class="content">
+          <label class="bookmark-title">Google</label>
+          <div class="stars">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+          </div>
+          <label class="bookmark-url">https://www.google.com/</div>
+        <div class="expand-description">
+          <label class="label">Expand description</label>
+          <i class="fa fa-angle-down" style="font-size:40px;"></i>
+        </div>
+      </div>
+      </div>
+      </div>
+      <section class="footer">By Kevin Murphy</div>
+      </section>
+
+      <!-- Expanded Page -->
+
+      <header class="page-title">Expanded Page</header>
+
+      <section class="add-bookmark-page">
+        <div class="default-top">
+          <div class="content">
+            <button class="btn">Add Bookmark</button>
+            <label class="default-rating-label">Default rating:</label>
+            <div class="default-rating">
+              <input type="radio" name="my-input" id="default-rating" checked>
+              <label for="one star">1 Star</label>
+              <input type="radio" name="my-input" id="default-rating">
+              <label for="two star">2 Star</label>
+              <input type="radio" name="my-input" id="default-rating">
+              <label for="three star">3 Star</label>
+              <input type="radio" name="my-input" id="default-rating">
+              <label for="four star">4 Star</label>
+              <input type="radio" name="my-input" id="default-rating">
+              <label for="five star">5 Star</label>
+            </div>
+          </div>
+        </div>
+        <div class="expanded-bookmark">
+          <div class="content">
+            <label class="bookmark-title">Google</label>
+            <div class="expand-description">
+              <label class="label">Retract description</label>
+              <i class="fa fa-angle-up" style="font-size:40px;"></i>
+            </div>
+            <div class="stars">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </div>
+            <form id="new-title">
+              <input type="text" name="description" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
+              <br>
+              <input type="text" name="URL" value="https://www.google.com/">
+              <br>
+              <input type="edit bookmark" value="Edit Bookmark">
+              <input type="delete bookmark" value="Delete Bookmark">
+            </form>
+          </div>
+        </div>
+        </div>
+        <div class="item">
+          <div class="content">
+            <label class="bookmark-title">Google</label>
+            <div class="stars">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </div>
+            <label class="bookmark-url">https://www.google.com/</div>
+          <div class="expand-description">
+            <label class="label">Expand description</label>
+            <i class="fa fa-angle-down" style="font-size:40px;"></i>
+          </div>
+        </div>
+        </div>
+        </div>
+        <section class="footer">By Kevin Murphy</div>
+        </section>
+      </section>
 
 
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
-  <script src="scripts/item.js"></script>
-  <script src="script/api.js"></script>
-  <script src="scripts/store.js"></script>
-  <script src="scripts/bookmarks.js"></script>
-  <script src="scripts/index.js"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+      <script src="scripts/item.js"></script>
+      <script src="script/api.js"></script>
+      <script src="scripts/store.js"></script>
+      <script src="scripts/bookmarks.js"></script>
+      <script src="scripts/index.js"></script>
 </body>
+
 </html>

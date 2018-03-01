@@ -5,19 +5,124 @@
 
 body {
   display: block;
-  width: 60%;
-  height: 80%;
+  width: 50%;
   margin: 50px auto;
-  text-align: center;
-  border: 1px solid black;
 }
 
 .title {
   font-weight: heavy;
+  text-align: center;
   font-size: 40px;
+  margin-top: 25px;
+  text-decoration: underline;
+}
+
+.page-title {
+  font-weight: heavy;
+  text-align: center;
+  font-size: 25px;
+  margin-top: 25px;
   text-decoration: underline;
 }
 
 .footer {
+  margin-top: 25px;
+  margin-bottom: 25px;
   font-style: italic;
+  text-align: center;
+}
+
+.bookmarks {
+  
+}
+
+.default-page, .expanded-page, .add-bookmark-page {
+  display: block;
+  margin: auto;
+  margin-top: 25px;
+  /* border: 1px solid black; */
+}
+
+.item {
+  display: block;
+  height: ;
+  margin: auto;
+  margin-top: 10px;
+  width: 90%;
+  border: 1px solid black;
+}
+
+.content {
+  display: ;
+  width: 100%;
+  padding: 10px;
+}
+
+.default-top {
+  display: block;
+  height: ;
+  margin: auto;
+  margin-top: 10px;
+  width: 90%;
+  height: 75px;
+}
+
+.expand-description {
+  display: ;
+  text-align: right;
+}
+
+.add-bookmark-top {
+  display: block;
+  height: ;
+  margin: auto;
+  margin-top: 10px;
+  width: 90%;
+  border: 1px solid black;
+}
+
+.expanded-top {
+  display: block;
+  height: ;
+  margin: auto;
+  margin-top: 10px;
+  width: 90%;
+  border: 1px solid black;
+}
+
+.checked {
+  color: orange;
+}
+
+.default-rating-label, .default-rating-content {
+  display: block;
+}
+
+.add-bookmark-button-box, .default-rating-box {
+  display: inline-block;
+}
+
+/* Radio element, when checked */
+input[type="radio"]:checked {
+  box-shadow: 0 0 0 3px orange;
+}
+
+.add-bookmark-top {
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.expanded-bookmark {
+  display: block;
+  height: ;
+  margin: auto;
+  margin-top: 10px;
+  width: 90%;
+  border: 1px solid black;
+}
+
+.description {
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid black;
 }
