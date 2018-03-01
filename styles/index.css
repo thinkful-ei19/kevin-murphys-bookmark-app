@@ -106,10 +106,6 @@ body {
   display: block;
 }
 
-.stars-box {
-  /* float: right; */
-}
-
 .title-box {
   float: left;
 }
@@ -156,4 +152,9 @@ input[type="radio"]:checked {
   padding: 5px;
   margin: 5px;
   border: 1px solid black;
+}
+
+.stars-box {
+  display: flex;
+  flex-direction: row;
 }
