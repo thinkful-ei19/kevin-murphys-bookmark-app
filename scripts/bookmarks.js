@@ -6,13 +6,13 @@ const bookmarks = (function () {
   function generateItemElement(item) {
 
     return `
-      <div class="item">
+      <div class="item" data-item-id="${item.id}">
         <div class="content">
           <div class="title-stars-url-box">
             <div class="title-stars-box">
               <div class="stars-box">
                 <label class="bookmark-title" for="stars-label">${item.title}</label>
-                <div class="stars" id="stars-label">
+                <div class="stars" class="stars-label">
                   <span class="fa fa-star checked"></span>
                   <span class="fa fa-star checked"></span>
                   <span class="fa fa-star checked"></span>
@@ -29,7 +29,7 @@ const bookmarks = (function () {
           <div class="expand-button-box">
             <label class="label">Edit Bookmark</label>
             <button class="expand-btn">
-              <i class="fa fa-edit" style="font-size:20px;"></i>
+              <i class="fa fa-angle-down" style="font-size:20px;"></i>
             </button>
           </div>
 
@@ -37,7 +37,6 @@ const bookmarks = (function () {
 
           <div class="expanded-bookmark hidden">
             <div class="content">
-              <label class="bookmark-title">${item.title}</label>
               <div class="stars">
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
@@ -45,21 +44,31 @@ const bookmarks = (function () {
                 <span class="fa fa-star"></span>
                 <span class="fa fa-star"></span>
               </div>
-              <form id="new-title">
-                <input type="text" name="description" value="${item.desc}">
+              <form class="edit-bookmark">
                 <br>
-                <input type="text" name="URL" value="${item.url}">
+                <span>Title:</span>
                 <br>
-                <input type="submit" name="edit bookmark" value="Edit Bookmark">
-                <input type="submit" name="delete bookmark" value="Delete Bookmark">
+                <input class="edit-title" type="text" name="title" value="${item.title}" required>
+                <br>
+                <span>URL:</span>
+                <br>
+                <input class="edit-url" type="text" name="description" value="${item.url}" required>
+                <br>
+                <span>Description:</span>
+                <br>
+                <textarea class="edit-desc" type="text" name="URL" value="" required>${item.desc}</textarea>
+                <br>
+                <input type="submit" name="edit bookmark" value="Edit Bookmark" class="edit-bookmark-submit >
               </form>
+              <div class="delete-button>
+                <button type="button" class="delete-bookmark">Delete Bookmark</button>
+              </div>
             </div>
           </div>
         </div>
-
-        </div>
       </div>
-      `;
+    </div>
+    `;
   }
 
   function generateBookmarksString(bookmarks) {
@@ -71,23 +80,13 @@ const bookmarks = (function () {
 
     let items = store.items;
 
-    // if (store.adding) {
-    //   // placeholder
-    // }
-
-    // if (store.expanded) {
-    //   $('.expanded-bookmark').toggleClass('hidden');
-    // }
-
-
-
     console.log('`render` ran');
 
     const bookmarkItemsString = generateBookmarksString(items);
 
-    // setTimeout(() => {
-    $('.bookmarks').html(bookmarkItemsString);
-    // }, 5000);
+    setTimeout(() => {
+      $('.bookmarks').html(bookmarkItemsString);
+    }, 1000);
   }
 
   function handleNewBookmarkClicked() {
@@ -106,6 +105,11 @@ const bookmarks = (function () {
       const newBookmarkTitle = $('#new-title').val();
       const url = $('#new-url').val();
       const desc = $('#new-desc').val();
+      $('#new-desc').val('');
+      $('#new-url').val('');
+      $('#new-title').val('');
+      $('.default-top').toggleClass('hidden');
+      $('.add-bookmark-top').toggleClass('hidden');
       api.createBookmark(newBookmarkTitle, url, desc, newItem => {
         store.createBookmark(newItem);
         render();
@@ -122,7 +126,7 @@ const bookmarks = (function () {
   }
 
   function getBookmarkIdFromElement(item) {
-    return $(item).closest('placeholder').data('item-id');
+    return $(item).closest('.item').data('item-id');
   }
 
   function handleExpandBookmarkClicked() {
@@ -134,10 +138,11 @@ const bookmarks = (function () {
   }
 
   function handleDeleteClicked() {
-    $('placeholder').on('click', 'placeholder', event => {
+    $('.bookmarks').on('click', '.delete-bookmark', event => {
       if (confirm('are you sure?')) {
         const id = getBookmarkIdFromElement(event.currentTarget);
         api.deleteBookmark(id, () => {
+          console.log(id);
           store.findAndDelete(id);
           render();
         });
@@ -146,15 +151,18 @@ const bookmarks = (function () {
   }
 
   function handleEditBookmarkSubmit() {
-    $('placeholder').on('submit', 'placeholder', event => {
+    $('.bookmarks').on('submit', '.edit-bookmark', event => {
       event.preventDefault();
-      const id = getBookmarkIdFromElement(event.currentTarget);
-      const bookmark = $(event.currentTarget).find('placeholder').val();
-      api.updateBookmark(id, { placeholder }, () => {
-        store.findAndUpdate(id, { placeholder });
-        render();
-      });
-      render();
+      if (confirm('are you sure?')) {
+        const id = getBookmarkIdFromElement(event.currentTarget);
+        const title = $('.edit-title').val();
+        const url = $('.edit-url').val();
+        const desc = $('.edit-desc').val();
+        api.updateBookmark(id, { title, url, desc }, () => {
+          store.findAndUpdate(id, { title, url, desc });
+          render();
+        });
+      }
     });
   }
 
