@@ -9,6 +9,10 @@ body {
   margin: 50px auto;
 }
 
+.hidden {
+  display: none;
+}
+
 .title {
   font-weight: heavy;
   text-align: center;
