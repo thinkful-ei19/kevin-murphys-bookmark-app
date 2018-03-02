@@ -3,11 +3,12 @@
 
 const store = (function () {
 
-  const createBookmark = function (title, url, desc, expanded, rating) {
-    this.items.push(title, url, desc, expanded, rating);
+  const createBookmark = function (bookmark) {
+    this.items.push(bookmark);
   };
 
   const findById = function (id) {
+    // use the guts of this function within other functions that need it. set it to a variable and use it there, not here
     return this.items.find(item => item.id === id);
   };
 

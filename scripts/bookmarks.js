@@ -7,9 +7,9 @@ const bookmarks = (function () {
 
     // let top = '';
 
-    if (store.expanded) {
-      $('.expanded-bookmark').toggleClass('hidden');
-    }
+    // if (store.expanded) {
+    //   $('.expanded-bookmark').toggleClass('hidden');
+    // }
 
     return `
       <div class="item">
@@ -17,15 +17,19 @@ const bookmarks = (function () {
           <div class="title-stars-url-box">
             <div class="title-stars-box">
               <div class="stars-box">
-                <label class="bookmark-title" for="stars-label">Google</label>
+                <label class="bookmark-title" for="stars-label">${item.title}</label>
                 <div class="stars" id="stars-label">
-                  <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
                 </div>
               </div>
             </div>
             <div class="bookmark-url-desc-box">
-              <label class="bookmark-url">https://www.google.com/</label>
-              <span class="description">lorem ipsum</span>
+              <label class="bookmark-url">${item.url}</label>
+              <span class="description">${item.desc}</span>
             </div>
           </div>
           <div class="expand-button-box">
@@ -34,6 +38,8 @@ const bookmarks = (function () {
               <i class="fa fa-edit" style="font-size:20px;"></i>
             </button>
           </div>
+
+
 
           <div class="expanded-bookmark hidden">
             <div class="content">
@@ -110,11 +116,11 @@ const bookmarks = (function () {
   }
 
   function handleCancelClicked() {
-    $('.bookmarks').on('click', '.cancel-button', function (event) {
+    $('.add-bookmark-top').on('click', '.cancel-button', function (event) {
       event.preventDefault();
       $('.default-top').toggleClass('hidden');
       $('.add-bookmark-top').toggleClass('hidden');
-      render();
+      // render();
     });
   }
 
@@ -125,9 +131,10 @@ const bookmarks = (function () {
   function handleExpandBookmarkClicked() {
     $('.bookmarks').on('click', '.expand-btn', event => {
       event.preventDefault();
+      $(event.currentTarget).closest('.item').find('.expanded-bookmark').toggleClass('hidden');
       store.toggleExpandedFilter();
       console.log('toggle expanded ran', store.expanded);
-      render();
+      // render();
     });
   }
 

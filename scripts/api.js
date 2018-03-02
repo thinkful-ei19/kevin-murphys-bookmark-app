@@ -11,8 +11,8 @@ let api = (function () {
       $.getJSON(`${BASE_URL}/bookmarks`, callback);
     },
     
-    createBookmark: (title, callback) => {
-      let newItem = JSON.stringify({ title });
+    createBookmark: (title, url, desc, callback) => {
+      let newItem = JSON.stringify({ title, url, desc });
       $.ajax({
         url: `${BASE_URL}/bookmarks`,
         method: 'POST',
