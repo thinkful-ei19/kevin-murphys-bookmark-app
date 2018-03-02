@@ -5,12 +5,6 @@ const bookmarks = (function () {
 
   function generateItemElement(item) {
 
-    // let top = '';
-
-    // if (store.expanded) {
-    //   $('.expanded-bookmark').toggleClass('hidden');
-    // }
-
     return `
       <div class="item">
         <div class="content">
@@ -43,14 +37,18 @@ const bookmarks = (function () {
 
           <div class="expanded-bookmark hidden">
             <div class="content">
-              <label class="bookmark-title">Google</label>
+              <label class="bookmark-title">${item.title}</label>
               <div class="stars">
-                <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
               </div>
               <form id="new-title">
-                <input type="text" name="description" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
+                <input type="text" name="description" value="${item.desc}">
                 <br>
-                <input type="text" name="URL" value="https://www.google.com/">
+                <input type="text" name="URL" value="${item.url}">
                 <br>
                 <input type="submit" name="edit bookmark" value="Edit Bookmark">
                 <input type="submit" name="delete bookmark" value="Delete Bookmark">
@@ -120,7 +118,6 @@ const bookmarks = (function () {
       event.preventDefault();
       $('.default-top').toggleClass('hidden');
       $('.add-bookmark-top').toggleClass('hidden');
-      // render();
     });
   }
 
@@ -132,9 +129,7 @@ const bookmarks = (function () {
     $('.bookmarks').on('click', '.expand-btn', event => {
       event.preventDefault();
       $(event.currentTarget).closest('.item').find('.expanded-bookmark').toggleClass('hidden');
-      store.toggleExpandedFilter();
-      console.log('toggle expanded ran', store.expanded);
-      // render();
+      // store.toggleExpandedFilter();
     });
   }
 
