@@ -33,6 +33,7 @@ const store = (function () {
     items: [],
     adding: false,
     expanded: false,
+    defaultStars: 3,
     toggleExpandedFilter,
     // toggleAddingFilter,
     findAndUpdate,

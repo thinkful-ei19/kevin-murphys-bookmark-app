@@ -10,6 +10,10 @@ body {
   font-family: 'Josefin Sans', sans-serif;
 }
 
+input, .btn, textarea {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
 .title {
   font-weight: heavy;
   text-align: center;
@@ -33,15 +37,14 @@ body {
   text-align: center;
 }
 
-/* .bookmarks {
-  
-} */
+.new-bookmark-button-box, .default-rating-box {
+  padding: 15px;
+}
 
 .default-page, .expanded-page, .add-bookmark-page {
   display: block;
   margin: auto;
   margin-top: 25px;
-  /* border: 1px solid black; */
 }
 
 .item {
@@ -50,13 +53,54 @@ body {
   margin-top: 10px;
   width: 90%;
   border: 1px solid black;
+  border-radius: 5px;
+}
+
+.btn {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+}
+
+.btn2 {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 .content {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   padding: 10px;
+}
+#new-title, #new-url, .edit-title, .edit-url {
+  width: 100%;
+}
+
+.top-content {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.bookmark-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.expanded-content {
+  width: 125%;
+  display: block;
+}
+
+.edit-desc {
+  width: 100%;
 }
 
 .default-top {
@@ -66,16 +110,13 @@ body {
   width: 90%
 }
 
-.expand-description {
-  text-align: right;
-}
-
 .add-bookmark-top {
   display: block;
   margin: auto;
   margin-top: 10px;
   width: 90%;
   border: 1px solid black;
+  border-radius: 5px;
 }
 
 .expanded-top {
@@ -84,6 +125,7 @@ body {
   margin-top: 10px;
   width: 90%;
   border: 1px solid black;
+  border-radius: 5px;
 }
 
 .checked {
@@ -97,20 +139,17 @@ body {
 .bookmark-url-desc-box {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   padding: 10px;
   width: 50%
-}
-
-.expand-button-box {
-  float: right;
 }
 
 .cancel {
   display: flex;
 }
 
-.bookmark-title, .stars, .bookmark-url {
-  padding: 15px;
+.bookmark-title, .stars {
+  padding: 10px;
 }
 
 .bookmark-title {
@@ -120,7 +159,7 @@ body {
 }
 
 .text-area {
-  width: 75%;
+  width: 100%;
   height: 100px;
 }
 
@@ -129,6 +168,7 @@ body {
   width: 100%;
   height: 100%;
   border-top: 1px solid black;
+  border-bottom: 1px solid black;
   padding: 10px;
 }
 
@@ -136,29 +176,35 @@ body {
   margin-bottom: 10px;
 }
 
+.padding-3px {
+  padding: 3px;
+}
+
 .add-title-url-description-box, .add-stars-button-box {
-  width: 75%;
+  width: 80%;
   display: block;
 }
 
 .add-bookmark-button-box, .stars-box {
   display: flex;
-}
 
-input[type="radio"]:checked {
-  box-shadow: 0 0 0 3px orange;
 }
 
 .add-bookmark-top {
   padding: 5px;
   border: 1px solid black;
+  border-radius: 5px;
 }
 
 .expanded-bookmark {
   display: block;
   margin: auto;
   margin-top: 10px;
-  /* width: 90%; */
+}
+
+.expand-btn:hover, .btn:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px;
 }
 
 .hidden {

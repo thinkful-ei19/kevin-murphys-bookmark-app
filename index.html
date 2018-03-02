@@ -13,6 +13,7 @@
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="styles/index.css">
   <link rel="stylesheet" href="styles/spinner.css">
+  <link rel="stylesheet" href="styles/hover.css">
 
 </head>
 
@@ -20,13 +21,13 @@
   <header class="title">Bookmarks</header>
 
   <div class="default-top">
-      <div class="content">
+      <div class="top-content">
         <div class="new-bookmark-button-box">
           <button class="btn">New Bookmark</button>
         </div>
         <div class="default-rating-box">
           <label class="default-rating-label">Default rating:</label>
-          <div class="default-rating-content">
+          <form class="default-rating-content">
             <input type="radio" name="my-input" id="default-rating" checked>
             <label for="one star">1 Star</label>
             <input type="radio" name="my-input" id="default-rating">
@@ -37,7 +38,7 @@
             <label for="four star">4 Star</label>
             <input type="radio" name="my-input" id="default-rating">
             <label for="five star">5 Star</label>
-          </div>
+          </form>
         </div>
       </div>
     </div>
@@ -48,30 +49,39 @@
             <form id="new-bookmark">
               <span>Title:</span>
               <br>
-              <input id="new-title" class="margin-bottom" type="text" name="title" value="google" required>
+              <input id="new-title" class="margin-bottom btn2 padding-3px" type="text" name="title" value="" required>
               <br>
               <span>URL:</span>
               <br>
-              <input id="new-url" class="margin-bottom" type="text" name="url" value="google.com" required>
+              <input id="new-url" class="margin-bottom btn2 padding-3px" type="text" name="url" value="" required>
               <br>
               <span>Description:</span>
               <br>
-              <textarea id="new-desc" class="text-area margin-bottom" type="text" name="description" value="" required>search engine</textarea>
+              <textarea id="new-desc" class="text-area margin-bottom btn2 padding-3px" type="text" name="description" value="" required></textarea>
               <br>
               <span>Rating:</span>
               <div class="add-stars-button-box margin-bottom">
                 <div class="add-stars-box">
-                  <div class="stars">
-                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
+                  <div class="default-rating-content margin-bottom">
+                    <input type="radio" name="my-input" id="default-rating" checked>
+                    <label for="one star">1 Star</label>
+                    <input type="radio" name="my-input" id="default-rating">
+                    <label for="two star">2 Star</label>
+                    <input type="radio" name="my-input" id="default-rating">
+                    <label for="three star">3 Star</label>
+                    <input type="radio" name="my-input" id="default-rating">
+                    <label for="four star">4 Star</label>
+                    <input type="radio" name="my-input" id="default-rating">
+                    <label for="five star">5 Star</label>
                   </div>
                 </div>
                 <div class="add-bookmark-button-box">
-                  <input type="submit" value="Add Bookmark">
+                  <input type="submit" class="btn" value="Add Bookmark">
                 </div>
               </div>
             </form>
             <div class="cancel">
-                <button class="cancel-button" type="button">Cancel</button>
+                <button class="cancel-button btn" type="button">Cancel</button>
               </div>
           </div>
         </div>

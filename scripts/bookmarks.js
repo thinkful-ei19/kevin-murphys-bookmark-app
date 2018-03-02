@@ -8,64 +8,73 @@ const bookmarks = (function () {
     return `
       <div class="item" data-item-id="${item.id}">
         <div class="content">
-          <div class="title-stars-url-box">
-            <div class="title-stars-box">
-              <div class="stars-box">
-                <label class="bookmark-title" for="stars-label">${item.title}</label>
-                <div class="stars" class="stars-label">
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star"></span>
-                  <span class="fa fa-star"></span>
+          <div class="bookmark-content">
+            <div class="title-stars-url-box">
+              <div class="title-stars-box">
+                <div class="stars-box">
+                  <label class="bookmark-title" for="stars-label">${item.title}</label>
+                  <div class="stars" class="stars-label">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                  </div>
                 </div>
               </div>
+              <div class="bookmark-url-desc-box">
+                <a href="${item.url}><text class="bookmark-url">${item.url}</text></a>
+                <text class="description">${item.desc}</text>
+              </div>
             </div>
-            <div class="bookmark-url-desc-box">
-              <label class="bookmark-url">${item.url}</label>
-              <text class="description">${item.desc}</text>
+            <div class="expand-button-box">
+              <button class="expand-btn btn2">
+                <i class="fa fa-angle-down" style="font-size:40px;"></i>
+                <i class="fa fa-angle-up hidden" style="font-size:40px;"></i>
+              </button>
             </div>
           </div>
-          <div class="expand-button-box">
-            <button class="expand-btn">
-              <i class="fa fa-angle-down" style="font-size:20px;"></i>
-            </button>
-          </div>
-
 
 
           <div class="expanded-bookmark hidden">
-            <div class="content">
-              <div class="stars">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
+            <div class="expanded-content">
+              <text>Edit Rating:</text>
+              <div class="default-rating-content">
+                <input type="radio" name="my-input" id="default-rating" checked>
+                <label for="one star">1 Star</label>
+                <input type="radio" name="my-input" id="default-rating">
+                <label for="two star">2 Star</label>
+                <input type="radio" name="my-input" id="default-rating">
+                <label for="three star">3 Star</label>
+                <input type="radio" name="my-input" id="default-rating">
+                <label for="four star">4 Star</label>
+                <input type="radio" name="my-input" id="default-rating">
+                <label for="five star">5 Star</label>
               </div>
               <form class="edit-bookmark">
                 <br>
                 <span>Title:</span>
                 <br>
-                <input class="edit-title margin-bottom" type="text" name="title" value="${item.title}" required>
+                <input class="edit-title margin-bottom btn2 padding-3px" type="text" name="title" value="${item.title}" required>
                 <br>
                 <span>URL:</span>
                 <br>
-                <input class="edit-url margin-bottom" type="text" name="description" value="${item.url}" required>
+                <input class="edit-url margin-bottom btn2 padding-3px" type="text" name="description" value="${item.url}" required>
                 <br>
                 <span>Description:</span>
                 <br>
-                <textarea class="edit-desc margin-bottom text-area" type="text" name="URL" value="" required>${item.desc}</textarea>
+                <textarea class="edit-desc margin-bottom text-area btn2 padding-3px" type="text" name="URL" value="" required>${item.desc}</textarea>
                 <br>
-                <input type="submit" name="edit bookmark" value="Edit Bookmark" class="edit-bookmark-submit >
+                <input type="submit" name="edit bookmark" value="Edit Bookmark" class="edit-bookmark-submit margin-bottom btn">
               </form>
-              <div class="delete-button>
-                <button type="button" class="delete-bookmark">Delete Bookmark</button>
+              <div class="delete-button">
+                <button type="button" class="delete-bookmark btn">Delete Bookmark</button>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
     </div>
     `;
   }
@@ -104,6 +113,7 @@ const bookmarks = (function () {
       const newBookmarkTitle = $('#new-title').val();
       const url = $('#new-url').val();
       const desc = $('#new-desc').val();
+      // const rating = $('').val();
       $('#new-desc').val('');
       $('#new-url').val('');
       $('#new-title').val('');
@@ -133,6 +143,8 @@ const bookmarks = (function () {
       event.preventDefault();
       $(event.currentTarget).closest('.item').find('.expanded-bookmark').toggleClass('hidden');
       // store.toggleExpandedFilter();
+      $('.fa-angle-down').toggleClass('hidden');
+      $('.fa-angle-up').toggleClass('hidden');
     });
   }
 
