@@ -7,6 +7,11 @@ body {
   display: block;
   width: 50%;
   margin: 50px auto;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+input, .btn, textarea {
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .title {
@@ -32,62 +37,95 @@ body {
   text-align: center;
 }
 
-.bookmarks {
-  
+.new-bookmark-button-box, .default-rating-box {
+  padding: 15px;
 }
 
 .default-page, .expanded-page, .add-bookmark-page {
   display: block;
   margin: auto;
   margin-top: 25px;
-  /* border: 1px solid black; */
 }
 
 .item {
   display: block;
-  height: ;
   margin: auto;
   margin-top: 10px;
   width: 90%;
   border: 1px solid black;
+  border-radius: 5px;
+}
+
+.btn {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+}
+
+.btn2 {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 .content {
-  display: ;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   padding: 10px;
 }
-
-.default-top {
-  display: block;
-  height: ;
-  margin: auto;
-  margin-top: 10px;
-  width: 90%;
-  height: 75px;
+#new-title, #new-url, .edit-title, .edit-url {
+  width: 100%;
 }
 
-.expand-description {
-  display: ;
-  text-align: right;
+.top-content {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.bookmark-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.expanded-content {
+  width: 125%;
+  display: block;
+}
+
+.edit-desc {
+  width: 100%;
+}
+
+.default-top {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: 90%
 }
 
 .add-bookmark-top {
   display: block;
-  height: ;
   margin: auto;
   margin-top: 10px;
   width: 90%;
   border: 1px solid black;
+  border-radius: 5px;
 }
 
 .expanded-top {
   display: block;
-  height: ;
   margin: auto;
   margin-top: 10px;
   width: 90%;
   border: 1px solid black;
+  border-radius: 5px;
 }
 
 .checked {
@@ -98,63 +136,81 @@ body {
   display: block;
 }
 
-.new-bookmark-button-box, .default-rating-box, .title-stars-url-box, .expand-button-box, .bookmark-title-box, .title-box, .stars-box {
-  display: inline-block;
+.bookmark-url-desc-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+  width: 50%
 }
 
-.title-stars-box, .bookmark-url-box {
-  display: block;
+.cancel {
+  display: flex;
 }
 
-.title-box {
-  float: left;
+.bookmark-title, .stars {
+  padding: 10px;
 }
 
-.expand-button-box {
-  width: 250px;
-  float: right;
+.bookmark-title {
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.text-area {
+  width: 100%;
+  height: 100px;
+}
+
+.description {
+  margin-top: 10px;
+  width: 100%;
+  height: 100%;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 10px;
+}
+
+.margin-bottom {
+  margin-bottom: 10px;
+}
+
+.padding-3px {
+  padding: 3px;
 }
 
 .add-title-url-description-box, .add-stars-button-box {
-  width: 75%;
+  width: 80%;
   display: block;
 }
 
 .add-bookmark-button-box, .stars-box {
-  width: 75%;
-  display: inline-block;
-}
+  display: flex;
 
-.add-bookmark-button-box {
-  float: right;
-}
-
-/* Radio element, when checked */
-input[type="radio"]:checked {
-  box-shadow: 0 0 0 3px orange;
 }
 
 .add-bookmark-top {
   padding: 5px;
   border: 1px solid black;
+  border-radius: 5px;
 }
 
 .expanded-bookmark {
   display: block;
-  height: ;
   margin: auto;
   margin-top: 10px;
-  width: 90%;
-  border: 1px solid black;
 }
 
-.description {
-  padding: 5px;
-  margin: 5px;
-  border: 1px solid black;
+.expand-btn:hover, .btn:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px;
 }
 
-.stars-box {
-  display: flex;
-  flex-direction: row;
+.hidden {
+  display: none;
+}
+
+#new-title, #new-url, #new-desc {
+  padding-top: 5px;
 }

@@ -10,8 +10,9 @@ let api = (function () {
     getItems: callback => {
       $.getJSON(`${BASE_URL}/bookmarks`, callback);
     },
-    createItem: (name, callback) => {
-      let newItem = JSON.stringify({ name });
+    
+    createBookmark: (title, url, desc, callback) => {
+      let newItem = JSON.stringify({ title, url, desc });
       $.ajax({
         url: `${BASE_URL}/bookmarks`,
         method: 'POST',
@@ -21,7 +22,7 @@ let api = (function () {
       });
     },
 
-    deleteBookmark: (id, updateData, callback) => {
+    deleteBookmark: (id, callback) => {
       $.ajax({
         url: `${BASE_URL}/bookmarks/${id}`,
         method: 'DELETE',
@@ -30,7 +31,7 @@ let api = (function () {
       });
     },
 
-    updateItem: (id, updateData, callback) => {
+    updateBookmark: (id, updateData, callback) => {
       let newData = JSON.stringify( updateData );
       $.ajax({
         url: `${BASE_URL}/bookmarks/${id}`,

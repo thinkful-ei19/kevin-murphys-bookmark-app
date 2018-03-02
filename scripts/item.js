@@ -9,7 +9,9 @@ const Item = (function(){
   const create = function(name) {
     return {
       id: cuid(),
-      name,
+      title,
+      url,
+      description,
       adding: false,
       expanded: false,
     };
