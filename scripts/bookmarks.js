@@ -36,7 +36,7 @@ const bookmarks = (function () {
           </div>
 
 
-          <div class="expanded-bookmark hidden">
+          <div class="get-id expanded-bookmark hidden">
             <div class="expanded-content">
               <text>Edit Rating:</text>
               <div class="default-rating-content">
@@ -143,8 +143,8 @@ const bookmarks = (function () {
       event.preventDefault();
       $(event.currentTarget).closest('.item').find('.expanded-bookmark').toggleClass('hidden');
       // store.toggleExpandedFilter();
-      $('.fa-angle-down').toggleClass('hidden');
-      $('.fa-angle-up').toggleClass('hidden');
+      $(event.currentTarget).find('.fa-angle-down').toggleClass('hidden');
+      $(event.currentTarget).find('.fa-angle-up').toggleClass('hidden');
     });
   }
 
@@ -153,7 +153,6 @@ const bookmarks = (function () {
       if (confirm('are you sure?')) {
         const id = getBookmarkIdFromElement(event.currentTarget);
         api.deleteBookmark(id, () => {
-          console.log(id);
           store.findAndDelete(id);
           render();
         });
@@ -166,11 +165,12 @@ const bookmarks = (function () {
       event.preventDefault();
       if (confirm('are you sure?')) {
         const id = getBookmarkIdFromElement(event.currentTarget);
-        const title = $('.edit-title').val();
-        const url = $('.edit-url').val();
-        const desc = $('.edit-desc').val();
+        const title = $(event.currentTarget).find('.edit-title').val();
+        const url = $(event.currentTarget).find('.edit-url').val();
+        const desc = $(event.currentTarget).find('.edit-desc').val();
         api.updateBookmark(id, { title, url, desc }, () => {
           store.findAndUpdate(id, { title, url, desc });
+          console.log(title);
           render();
         });
       }
