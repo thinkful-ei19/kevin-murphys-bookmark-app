@@ -23,11 +23,10 @@ const bookmarks = (function () {
             </div>
             <div class="bookmark-url-desc-box">
               <label class="bookmark-url">${item.url}</label>
-              <span class="description">${item.desc}</span>
+              <text class="description">${item.desc}</text>
             </div>
           </div>
           <div class="expand-button-box">
-            <label class="label">Edit Bookmark</label>
             <button class="expand-btn">
               <i class="fa fa-angle-down" style="font-size:20px;"></i>
             </button>
@@ -48,15 +47,15 @@ const bookmarks = (function () {
                 <br>
                 <span>Title:</span>
                 <br>
-                <input class="edit-title" type="text" name="title" value="${item.title}" required>
+                <input class="edit-title margin-bottom" type="text" name="title" value="${item.title}" required>
                 <br>
                 <span>URL:</span>
                 <br>
-                <input class="edit-url" type="text" name="description" value="${item.url}" required>
+                <input class="edit-url margin-bottom" type="text" name="description" value="${item.url}" required>
                 <br>
                 <span>Description:</span>
                 <br>
-                <textarea class="edit-desc" type="text" name="URL" value="" required>${item.desc}</textarea>
+                <textarea class="edit-desc margin-bottom text-area" type="text" name="URL" value="" required>${item.desc}</textarea>
                 <br>
                 <input type="submit" name="edit bookmark" value="Edit Bookmark" class="edit-bookmark-submit >
               </form>
@@ -86,7 +85,7 @@ const bookmarks = (function () {
 
     setTimeout(() => {
       $('.bookmarks').html(bookmarkItemsString);
-    }, 1000);
+    }, 1500);
   }
 
   function handleNewBookmarkClicked() {

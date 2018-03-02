@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" href="styles/spinner.css">
 
 </head>
 
@@ -47,18 +48,18 @@
             <form id="new-bookmark">
               <span>Title:</span>
               <br>
-              <input id="new-title" type="text" name="title" value="google" required>
+              <input id="new-title" class="margin-bottom" type="text" name="title" value="google" required>
               <br>
               <span>URL:</span>
               <br>
-              <input id="new-url" type="text" name="url" value="google.com" required>
+              <input id="new-url" class="margin-bottom" type="text" name="url" value="google.com" required>
               <br>
               <span>Description:</span>
               <br>
-              <input id="new-desc" type="text" name="description" value="search engine" required>
+              <textarea id="new-desc" class="text-area margin-bottom" type="text" name="description" value="" required>search engine</textarea>
               <br>
               <span>Rating:</span>
-              <div class="add-stars-button-box">
+              <div class="add-stars-button-box margin-bottom">
                 <div class="add-stars-box">
                   <div class="stars">
                     <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
@@ -75,6 +76,7 @@
           </div>
         </div>
       </div>
+      
     <section class="bookmarks">
       <div class="loader"></div>
     </section>
