@@ -7,10 +7,7 @@ body {
   display: block;
   width: 50%;
   margin: 50px auto;
-}
-
-.hidden {
-  display: none;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .title {
@@ -106,7 +103,7 @@ body {
   display: inline-block;
 }
 
-.title-stars-box, .bookmark-url-box {
+.title-stars-box, .bookmark-url-desc-box {
   display: block;
 }
 
@@ -152,13 +149,17 @@ input[type="radio"]:checked {
   border: 1px solid black;
 }
 
-.description {
+/* .description {
   padding: 5px;
   margin: 5px;
   border: 1px solid black;
-}
+} */
 
 .stars-box {
   display: flex;
   flex-direction: row;
+}
+
+.hidden {
+  display: none;
 }

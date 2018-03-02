@@ -8,6 +8,8 @@
   <meta name="Kevin Murphy" content="Bookmark Application for Thinkful">
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="styles/index.css">
 
@@ -15,6 +17,7 @@
 
 <body>
   <header class="title">Bookmarks</header>
+
   <div class="default-top">
       <div class="content">
         <div class="new-bookmark-button-box">
@@ -37,6 +40,34 @@
         </div>
       </div>
     </div>
+
+    <div class="add-bookmark-top hidden">
+        <div class="content">
+          <div class="add-title-url-description-box">
+            <form id="new-bookmark">
+              <input id="new-title" type="text" name="firstname" value="Title...">
+              <br>
+              <input id="new-url" type="text" name="lastname" value="URL...">
+              <br>
+              <input id="new-desc" type="text" name="lastname" value="Description....">
+              <br>
+              <div class="add-stars-button-box">
+                <div class="add-stars-box">
+                  <div class="stars">
+                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
+                  </div>
+                </div>
+                <div class="add-bookmark-button-box">
+                  <input type="submit" value="Add Bookmark">
+                </div>
+              </div>
+            </form>
+            <div class="cancel">
+                <button class="cancel-button">Cancel</button>
+              </div>
+          </div>
+        </div>
+      </div>
   <section class="bookmarks"></section>
   
   <section class="footer">By Kevin Murphy</div>

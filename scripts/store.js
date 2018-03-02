@@ -3,8 +3,8 @@
 
 const store = (function () {
 
-  const createBookmark = function (item) {
-    this.items.push(item);
+  const createBookmark = function (title, url, desc, expanded, rating) {
+    this.items.push(title, url, desc, expanded, rating);
   };
 
   const findById = function (id) {
@@ -19,9 +19,9 @@ const store = (function () {
     this.expanded = !this.expanded;
   };
 
-  const toggleAddingFilter = function () {
-    this.adding = !this.adding;
-  };
+  // const toggleAddingFilter = function () {
+  //   this.adding = !this.adding;
+  // };
 
   const findAndUpdate = (id, newData) => {
     let item = store.items.find(item => item.id === id);
@@ -33,7 +33,7 @@ const store = (function () {
     adding: false,
     expanded: false,
     toggleExpandedFilter,
-    toggleAddingFilter,
+    // toggleAddingFilter,
     findAndUpdate,
     createBookmark,
     findById,
